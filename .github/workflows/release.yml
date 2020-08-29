@@ -24,6 +24,8 @@ jobs:
           alias: ${{ secrets.KEY_ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_ALIAS_PASSWORD }}
+      - name: Test
+        run: echo Signed path ${{ steps.sign_release.outputs.signedReleaseFile }}
       - uses: actions/upload-artifact@v2
         name: Publish APK in releases
         with:
