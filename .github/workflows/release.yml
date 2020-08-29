@@ -17,6 +17,7 @@ jobs:
       - name: Build release
         run: ./gradlew assembleRelease
       - name: Sign release
+        id: sign_release
         uses: r0adkll/sign-android-release@v1
         with:
           releaseDirectory: app/build/outputs/apk/release
